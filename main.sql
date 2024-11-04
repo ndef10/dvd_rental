@@ -134,3 +134,10 @@ SELECT amount, MAX(payment_date) AS last_payment_date, count(*)FROM payment GROU
 --  • Listar todas las “film” del año 2006 que contengan un (rental_rate) mayor a 4.0.
 
 SELECT release_year, title, rental_rate FROM film WHERE release_year = 2006 AND rental_rate > '4.0' LIMIT 10;
+
+-- ===============================================================================================================CONSULTA 5========
+
+-- Realiza un Diccionario de datos que contenga el nombre de las tablas y columnas, si
+-- éstas pueden ser nulas, y su tipo de dato correspondiente.
+
+SELECT table_name, column_name, is_nullable, data_type FROM information_schema.columns WHERE table_schema = 'public' ORDER BY table_name, column_name;
